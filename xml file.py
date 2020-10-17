@@ -1,0 +1,20 @@
+import cv2
+import numpy as np
+image=cv2.imread("C://Users//Admin//Desktop//data//1.jpg")
+print(type(image))
+
+cv2.imshow('orignal',image)
+gray=cv2.cvtColor(image,cv2.COLOR_BGR2GRAY)
+print(type(gray))
+cv2.imshow('gray_scale',gray)
+skel=np.zeros(image.shape,np.uint8)
+print(skel)
+ret,thresh=cv2.threshold(gray,127,255,cv2.THRESH_BINARY)
+cv2.imshow('thresh',thresh)
+kernel=np.ones((5,5),np.uint8)
+err=cv2.erode(thresh,kernel)
+cv2.imshow("err",err)
+#element = cv2.getStructuringElement(cv2.MORPH_CROSS,())
+#cv2.imshow("element",element)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
