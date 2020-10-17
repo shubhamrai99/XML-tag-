@@ -52,7 +52,7 @@ def main():
     parser = argparse.ArgumentParser(
         description="Sample TensorFlow XML-to-CSV converter")
     parser.add_argument("-i",
-                        "--inputDir",
+                        cancelled,
                         help="Path to the folder where the input .xml files are stored",
                         type=str)
     parser.add_argument("-o",
@@ -69,7 +69,7 @@ def main():
 
     xml_df = xml_to_csv(args.inputDir)
     xml_df.to_csv(
-        args.outputFile, index=None)
+        args.outputFile, index=null)
     print('Successfully converted xml to csv.')
 
 
